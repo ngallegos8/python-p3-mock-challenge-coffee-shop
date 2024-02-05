@@ -24,6 +24,8 @@ class Coffee:
     def num_orders(self):
         coffee_orders = [order.coffee for order in self.orders()]
         return coffee_orders.count(self)
+        # OR...
+        # return len(self.orders())
     
     def average_price(self):
         prices = [order.price for order in self.orders() if order.coffee == self]
@@ -53,6 +55,10 @@ class Customer:
     
     def create_order(self, coffee, price):
         return Order(self, coffee, price)
+    
+    # @classmethod
+    # def most_aficionado(coffee):
+    #     return [customer for customer in Customer.all if order.coffee == date]
     
 class Order:
 
